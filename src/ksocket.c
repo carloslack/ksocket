@@ -511,6 +511,8 @@ char *inet_ntoa(struct in_addr *in)
 	return str_ip;
 }
 
+#ifndef KSOCKET_EMBEDDED // Allow ksocket to run inside other lkms
+
 //module init and cleanup procedure
 static int ksocket_init(void)
 {
@@ -546,3 +548,5 @@ EXPORT_SYMBOL(ksetsockopt);
 EXPORT_SYMBOL(kgetsockopt);
 EXPORT_SYMBOL(inet_addr);
 EXPORT_SYMBOL(inet_ntoa);
+
+#endif //KSOCKET_EMBEDDED
