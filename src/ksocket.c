@@ -76,7 +76,7 @@ ksocket_t ksocket(int domain, int type, int protocol)
 	}
 	*/
 	
-	printk("sock_create sk= 0x%p\n", sk);
+	//printk("sock_create sk= 0x%p\n", sk);
 	
 	return sk;
 }
