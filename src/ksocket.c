@@ -26,6 +26,7 @@
 //#include "nested.h"
 //#include "sxgdebug.h"
 
+#ifndef KSOCKET_EMBEDDED // Allow ksocket to run inside other lkms
 #define KSOCKET_NAME	"ksocket"
 #define KSOCKET_VERSION	"0.0.2"
 #define KSOCKET_DESCPT	"BSD-style socket APIs for kernel 5.0 developers"
@@ -36,6 +37,7 @@
 MODULE_AUTHOR(KSOCKET_AUTHOR);
 MODULE_DESCRIPTION(KSOCKET_NAME"-"KSOCKET_VERSION"\n"KSOCKET_DESCPT);
 MODULE_LICENSE("Dual BSD/GPL");
+#endif
 
 /*
 static void (*origSk)(struct sock *sk, int bytes) = NULL;
